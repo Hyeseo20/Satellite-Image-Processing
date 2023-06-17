@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <DATABASE>
+    <FIELDS>
+      <FIELD TYPE="INTEGER">ClusterID</FIELD>
+      <FIELD TYPE="INTEGER">Elements</FIELD>
+      <FIELD TYPE="DOUBLE">Std.Dev.</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_QA_RADSAT</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_B2</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_B3</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_B4</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_B1</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_B5</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_QA_AEROSOL</FIELD>
+      <FIELD TYPE="DOUBLE">LC08_L2SP_014032_20210623_20210630_02_T1_SR_B6</FIELD>
+    </FIELDS>
+  </DATABASE>
+  <SOURCE></SOURCE>
+  <HISTORY saga-version="8.0.1">
+    <TOOL library="imagery_classification" id="1" name="K-Means Clustering for Grids">
+      <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid System">
+        <CELLSIZE>30</CELLSIZE>
+        <XMIN>393900</XMIN>
+        <XMAX>626100</XMAX>
+        <YMIN>4346400</YMIN>
+        <YMAX>4582200</YMAX>
+      </OPTION>
+      <OPTION type="choice" id="METHOD" name="Method" index="1">Hill-Climbing (Rubin 1967)</OPTION>
+      <OPTION type="integer" id="NCLUSTER" name="Clusters">10</OPTION>
+      <OPTION type="integer" id="MAXITER" name="Maximum Iterations">10</OPTION>
+      <OPTION type="boolean" id="NORMALISE" name="Normalise">false</OPTION>
+      <OPTION type="boolean" id="RGB_COLORS" name="Update Colors from Features">false</OPTION>
+      <OPTION type="choice" id="INITIALIZE" name="Start Partition" index="0">random</OPTION>
+      <OPTION type="boolean" id="OLDVERSION" name="Old Version">false</OPTION>
+      <INPUT_LIST type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM">
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+        <INPUT type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM"/>
+      </INPUT_LIST>
+      <OUTPUT type="table" id="STATISTICS" name="Statistics">Cluster Analysis</OUTPUT>
+    </TOOL>
+  </HISTORY>
+  <FILE>C:\Users\hskim\Desktop\2학년 2학기\위성정보처리N\과제\LC08_L2SP_014032_20210623_20210630_02_T1_ANG.txt</FILE>
+  <DESCRIPTION></DESCRIPTION>
+  <PROJECTION>
+    <OGC_WKT>PROJCS["WGS 84 / UTM zone 18N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-75],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32618"]]</OGC_WKT>
+    <PROJ4>+proj=utm +zone=18 +datum=WGS84 +units=m +no_defs</PROJ4>
+    <EPSG>32618</EPSG>
+  </PROJECTION>
+</SAGA_METADATA>
